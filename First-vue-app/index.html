@@ -10,11 +10,18 @@
 </head>
 <body>
     <div id="vue-app">
-        <h1>Hii Vue 3</h1>
+        
     </div>
     <script>
         const app = Vue.createApp({
-            template: '<div> hi </div>',
+            data(){
+                return {
+                    title: 'Vue3 Tutorial',
+                };
+            },
+            template: `<div>
+                <h1> Hii {{ title }}</h1>
+                </div>`
         });
         app.mount("#vue-app");
     </script>
