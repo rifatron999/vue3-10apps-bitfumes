@@ -1,22 +1,24 @@
 <template>
-  <h1 v-show="isShowing" >{{count}}</h1>
-
-  <p>Someting else</p>
+ <h1> Dc Heros</h1>
+ <ul>
+  <li v-for="(hero,index) in dcHeros" v-bind:key="index" >{{index}} {{hero.name}}</li>
+ </ul>
+ <input v-bind:value="newHero">
 </template>
 
 <script>
   export default{
     data() {
       return {
-        title:"<h1> hey vue3 from h1</h1>",
-        isShowing: true,
-        count: 0,
+        dcHeros:[
+          {name:'Super Girl'},
+          {name:'Arrow'},
+          {name:'Flash'},
+          {name:'Super man'},
+          {name:'Bat Man'}
+        ],
+        newHero:"Aquaman"
       };
     },
-    mounted() {
-      setInterval( () => {
-        this.count++;
-      },1000);
-    }
   }
 </script>
