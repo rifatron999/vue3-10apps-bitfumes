@@ -3,11 +3,11 @@
  <ul>
   <li v-for="(hero,index) in dcHeros" v-bind:key="index" >{{index}} {{hero.name}}</li>
  </ul>
- <input :value="newHero">
+ <!-- <input v-model.trim="newHero"> --> <!-- removes white spaces -->  
+ <!--  <input v-model.lazy="newHero"> --> <!-- updates after defccus --> 
+ <!-- <textarea v-model.lazy="newHero"></textarea> -->
+ <textarea v-model.number="newHero"></textarea>
  <button v-bind:disabled="isDisabled" >Add hero</button>
- <br> <br>
- <input :[attribute]="newHero2"> <!-- dynamic attribute binding -->
-
 </template>
 
 <script>
@@ -22,8 +22,7 @@
           {name:'Bat Man'}
         ],
         newHero:"Aquaman",
-        newHero2:"SpiderMan",
-        isDisabled: true,
+        isDisabled: false,
         attribute: "value"
       };
     },
