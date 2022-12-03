@@ -3,7 +3,11 @@
  <ul>
   <li v-for="(hero,index) in dcHeros" v-bind:key="index" >{{index}} {{hero.name}}</li>
  </ul>
- <input v-bind:value="newHero">
+ <input :value="newHero">
+ <button v-bind:disabled="isDisabled" >Add hero</button>
+ <br> <br>
+ <input :[attribute]="newHero2"> <!-- dynamic attribute binding -->
+
 </template>
 
 <script>
@@ -17,7 +21,10 @@
           {name:'Super man'},
           {name:'Bat Man'}
         ],
-        newHero:"Aquaman"
+        newHero:"Aquaman",
+        newHero2:"SpiderMan",
+        isDisabled: true,
+        attribute: "value"
       };
     },
   }
