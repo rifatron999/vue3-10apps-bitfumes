@@ -1,7 +1,5 @@
 <template>
-  <h1 v-if="(2*3 == 5)" v-html="title"></h1>
-  <h3 v-else-if="(2*2 === 4)">this is else if</h3>
-  <h2 v-else >This is v-else part</h2>
+  <h1 v-show="isShowing" >{{count}}</h1>
 
   <p>Someting else</p>
 </template>
@@ -12,7 +10,13 @@
       return {
         title:"<h1> hey vue3 from h1</h1>",
         isShowing: true,
-      }
+        count: 0,
+      };
+    },
+    mounted() {
+      setInterval( () => {
+        this.count++;
+      },1000);
     }
   }
 </script>
