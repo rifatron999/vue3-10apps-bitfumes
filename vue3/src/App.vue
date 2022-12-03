@@ -1,5 +1,5 @@
 <template>
-  <h1>{{title.toUpperCase()}}</h1>
+  <h1 v-html="title"></h1>
   <p>Someting else</p>
 </template>
 
@@ -7,7 +7,7 @@
   export default{
     data() {
       return {
-        title:"hey vue3",
+        title:"<h1> hey vue3 from h1</h1>",
       }
     }
   }
